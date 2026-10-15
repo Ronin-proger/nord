@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#12120f" />
+    <meta name="description" content="Норд — инженер продуктов. Системы для операционки бизнеса: интерфейс, сервер, данные и интеграции." />
+    <title>Норд — системы для реальной работы</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      document.documentElement.classList.add("is-booting");
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main" data-i18n="nav.skip">К содержанию</a>
+
+    <div class="loader" id="loader" role="status" aria-live="polite">
+      <div class="loader-top">
+        <span class="loader-kicker">nord</span>
+        <span class="loader-num" id="loaderNum">00</span>
+      </div>
+      <div class="loader-bar" aria-hidden="true"><span id="loaderBar"></span></div>
+    </div>
+
+    <div class="glow" id="glow" aria-hidden="true"></div>
+
+    <header class="nav" id="nav">
+      <a class="brand" href="#top">
+        <span class="mark" aria-hidden="true">
+          <i></i>
+        </span>
+        <span class="brand-name" id="brandName">Норд</span>
+      </a>
+      <nav class="nav-links" aria-label="Разделы">
+        <a href="#work" data-i18n="nav.work">Работы</a>
+        <a href="#services" data-i18n="nav.services">Услуги</a>
+        <a href="#about" data-i18n="nav.about">Подход</a>
+        <a href="#contact" data-i18n="nav.contact">Контакт</a>
+      </nav>
+      <div class="nav-tools">
+        <button class="lang" id="langBtn" type="button" aria-label="English">EN</button>
+        <a class="btn btn-nav" href="#contact" data-i18n="nav.cta">Написать</a>
+        <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mobileNav">
+          <span></span>
+          <span></span>
+          <span class="sr" data-i18n="nav.menu">Меню</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <a href="#work" data-i18n="nav.work">Работы</a>
+      <a href="#services" data-i18n="nav.services">Услуги</a>
+      <a href="#about" data-i18n="nav.about">Подход</a>
+      <a href="#contact" data-i18n="nav.contact">Контакт</a>
+    </div>
+
+    <aside class="rail" id="rail" aria-hidden="true">
+      <span data-rail="top">01</span>
+      <span data-rail="work">02</span>
+      <span data-rail="services">03</span>
+      <span data-rail="about">04</span>
+      <span data-rail="contact">05</span>
+    </aside>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <p class="kicker">
+          <span data-i18n="hero.kicker">Портфолио · 2026</span>
+          <span class="kicker-gap" aria-hidden="true"></span>
+          <span id="heroCity" data-i18n="hero.city">Москва</span>
+          <span class="clock" id="clock">—:—</span>
+        </p>
+        <h1>
+          <span class="line"><span data-i18n="hero.l1">Интерфейсы</span></span>
+          <span class="line"><span data-i18n="hero.l2">с точным</span></span>
+          <span class="line"><span data-i18n="hero.l3">работы</span><i class="dot">.</i></span>
+        </h1>
+        <ul class="facts" id="facts"></ul>
+        <div class="hero-foot">
+          <p class="lead" data-i18n="hero.lead">
+            Собираю экраны, в которых сетка, шрифт и анимация работают как одна система. Спокойно, ясно и так, чтобы на них хотелось задержаться.
+          </p>
+          <div class="hero-meta">
+            <p class="status">
+              <i class="pulse" aria-hidden="true"></i>
+              <span data-i18n="hero.status">Открыт к работе и сотрудничеству</span>
+            </p>
+            <p class="role" id="roleLine" data-i18n="hero.role">Разработчик интерфейсов</p>
+            <a class="scroll-cue" href="#work">
+              <span data-i18n="hero.scroll">Листайте</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="marquee on-light" aria-hidden="true">
+        <div class="marquee-track" id="marqueeTrack"></div>
+      </div>
+
+      <section class="work on-light" id="work">
+        <div class="section-head">
+          <p class="kicker" data-i18n="work.kicker">Избранное</p>
+          <div class="section-head-row">
+            <h2 data-i18n="work.title">Работы, которые держат кадр</h2>
+            <p data-i18n="work.note">Самостоятельные экраны. Откройте кейс — внутри задача, ход решения и результат.</p>
+          </div>
+        </div>
+        <div class="stack" id="stack"></div>
+      </section>
+
+      <section class="services" id="services">
+        <div class="section-head">
+          <p class="kicker" data-i18n="services.kicker">Услуги</p>
+          <div class="section-head-row">
+            <h2 data-i18n="services.title">Что можно отдать в одни руки</h2>
+            <p data-i18n="services.note"></p>
+          </div>
+        </div>
+        <div class="service-grid" id="servicesGrid"></div>
+        <div class="estimate on-light" id="estimate"></div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="section-head">
+          <p class="kicker" data-i18n="about.kicker">Подход</p>
+          <h2 data-i18n="about.title">Сначала смысл. Потом ритм. Движение — только если оно помогает.</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p data-i18n="about.p1"></p>
+            <p data-i18n="about.p2"></p>
+            <p class="signature" id="signature"></p>
+          </div>
+          <ol class="principles" id="principles"></ol>
+        </div>
+        <div class="skills">
+          <h3 data-i18n="skillsTitle">Чем пользуюсь</h3>
+          <div class="skill-groups" id="skills"></div>
+        </div>
+      </section>
+
+      <section class="practice" id="practice">
+        <div class="section-head">
+          <p class="kicker" data-i18n="practice.kicker">Практика</p>
+          <h2 data-i18n="practice.title">Как я работаю сейчас</h2>
+        </div>
+        <ol class="timeline" id="timeline"></ol>
+      </section>
+
+      <section class="contact on-light" id="contact">
+        <div class="contact-layout">
+          <div>
+            <p class="kicker" data-i18n="contact.kicker">Контакт</p>
+            <h2 data-i18n="contact.title">Напишите.</h2>
+            <p class="contact-lead" data-i18n="contact.lead"></p>
+            <a class="mail" id="mailLink" href="mailto:hello@nord.studio">hello@nord.studio</a>
+            <div class="contact-links" id="contactLinks"></div>
+          </div>
+          <form class="letter" id="letter" novalidate>
+            <label>
+              <span data-i18n="contact.name">Имя</span>
+              <input name="name" type="text" autocomplete="name" required />
+              <small class="field-error" data-for="name"></small>
+            </label>
+            <label>
+              <span data-i18n="contact.company">Компания</span>
+              <input name="company" type="text" autocomplete="organization" />
+            </label>
+            <label>
+              <span data-i18n="contact.email">Почта</span>
+              <input name="email" type="email" autocomplete="email" required />
+              <small class="field-error" data-for="email"></small>
+            </label>
+            <label>
+              <span data-i18n="contact.message">Сообщение</span>
+              <textarea name="message" rows="5" required></textarea>
+              <small class="field-error" data-for="message"></small>
+            </label>
+            <div class="letter-foot">
+              <p data-i18n="contact.hint"></p>
+              <button class="btn btn-dark" type="submit" data-i18n="contact.send">Открыть письмо</button>
+            </div>
+            <p class="form-success" id="formSuccess" hidden></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span id="footerName"></span>
+      <span data-i18n="footer.built">Собрано вручную · HTML, CSS, JavaScript</span>
+      <a href="#top" data-i18n="footer.top">Наверх</a>
+    </footer>
+
+    <div class="case" id="case" hidden>
+      <button class="case-backdrop" type="button" data-close tabindex="-1" aria-label="Закрыть"></button>
+      <div
+        class="case-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="caseTitle"
+        tabindex="-1"
+      >
+        <header class="case-bar">
+          <span id="caseIndex">01</span>
+          <button class="text-btn" type="button" data-close data-i18n="case.close">Закрыть</button>
+        </header>
+        <div class="case-scroll" id="caseBody"></div>
+      </div>
+    </div>
+
+    <noscript>
+      <p class="noscript">Включите JavaScript: кейсы и язык собираются в браузере.</p>
+    </noscript>
+
+    <script src="js/content.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
